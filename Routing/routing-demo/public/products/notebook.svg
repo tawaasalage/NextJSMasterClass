@@ -1,0 +1,14 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Notebook</title>
+  <desc id="desc">Simple illustration of a notebook.</desc>
+  <rect width="640" height="480" rx="24" fill="#FFF4ED"/>
+  <rect x="198" y="74" width="284" height="332" rx="18" fill="#FFFFFF" stroke="#D9DEE8" stroke-width="10"/>
+  <rect x="198" y="74" width="70" height="332" rx="18" fill="#F97066"/>
+  <path d="M302 154H430" stroke="#98A2B3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M302 214H430" stroke="#98A2B3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M302 274H430" stroke="#98A2B3" stroke-width="12" stroke-linecap="round"/>
+  <path d="M302 334H390" stroke="#98A2B3" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="234" cy="134" r="10" fill="#FFFFFF"/>
+  <circle cx="234" cy="214" r="10" fill="#FFFFFF"/>
+  <circle cx="234" cy="294" r="10" fill="#FFFFFF"/>
+</svg>

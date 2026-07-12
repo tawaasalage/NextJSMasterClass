@@ -1,0 +1,10 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Laptop</title>
+  <desc id="desc">Simple illustration of a laptop computer.</desc>
+  <rect width="640" height="480" rx="24" fill="#EAF2FF"/>
+  <rect x="138" y="104" width="364" height="230" rx="16" fill="#17202A"/>
+  <rect x="160" y="126" width="320" height="186" rx="8" fill="#80B7FF"/>
+  <path d="M98 346H542L504 398H136L98 346Z" fill="#344054"/>
+  <path d="M246 360H394L382 378H258L246 360Z" fill="#D9DEE8"/>
+  <circle cx="320" cy="220" r="36" fill="#FFFFFF" opacity="0.55"/>
+</svg>
