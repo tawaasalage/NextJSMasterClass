@@ -1,0 +1,85 @@
+:root {
+  --background: #f6f5f1;
+  --surface: #ffffff;
+  --text: #17211b;
+  --muted: #667069;
+  --accent: #18794e;
+  --accent-soft: #ddf3e8;
+  --border: #d9ded9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.shell { width: min(1060px, calc(100% - 40px)); margin-inline: auto; }
+
+.site-header { background: rgba(246, 245, 241, 0.94); border-bottom: 1px solid var(--border); }
+.nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { font-weight: 800; letter-spacing: -0.03em; }
+.nav-links { display: flex; gap: 20px; color: var(--muted); font-size: 0.92rem; }
+.nav-links a:hover { color: var(--accent); }
+
+.page { padding: 88px 0; }
+.narrow { max-width: 720px; margin: 0 auto; }
+.hero h1, .page > h1 { margin: 0; max-width: 850px; font-size: clamp(2.4rem, 6vw, 4.8rem); line-height: 1.02; letter-spacing: -0.055em; }
+.eyebrow { margin: 0 0 14px; color: var(--accent); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.lead { max-width: 680px; margin: 24px 0 42px; color: var(--muted); font-size: 1.1rem; }
+
+.lesson-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 58px; }
+.lesson-card, .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+.lesson-card { min-height: 260px; padding: 26px; transition: transform 160ms ease, border-color 160ms ease; }
+.lesson-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+.lesson-card > span, .label { color: var(--accent); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+.lesson-card h2 { margin: 48px 0 8px; font-size: 1.25rem; }
+.lesson-card p { color: var(--muted); }
+.lesson-card strong { display: block; margin-top: 22px; color: var(--accent); font-size: 0.9rem; }
+
+.note { margin: 30px 0; padding: 20px 22px; background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 6px; }
+.note p { margin: 7px 0 0; }
+code { padding: 2px 6px; background: rgba(23, 33, 27, 0.08); border-radius: 4px; font-family: Consolas, monospace; font-size: 0.88em; }
+.note > code { display: block; margin-top: 10px; overflow-x: auto; }
+
+.two-columns { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 18px; }
+.panel { padding: 28px; }
+.panel h2 { margin: 10px 0 4px; }
+.panel > p { color: var(--muted); }
+.course-list { margin: 12px 0 0; padding: 0; list-style: none; }
+.course-list li { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.course-list li:last-child { border: 0; }
+.course-list small { color: var(--muted); }
+
+.form-card { display: grid; gap: 10px; }
+label { margin-top: 8px; font-weight: 700; font-size: 0.9rem; }
+input, textarea { width: 100%; padding: 13px 14px; border: 1px solid var(--border); border-radius: 8px; background: #fff; color: var(--text); font: inherit; }
+textarea { min-height: 120px; resize: vertical; }
+input:focus, textarea:focus { outline: 3px solid var(--accent-soft); border-color: var(--accent); }
+button { margin-top: 10px; padding: 13px 18px; border: 0; border-radius: 8px; background: var(--accent); color: white; font: inherit; font-weight: 800; cursor: pointer; }
+button:disabled { cursor: wait; opacity: 0.65; }
+.message { margin: 18px 0 0 !important; padding: 13px 15px; border-radius: 8px; }
+.success { background: var(--accent-soft); color: #125c3c !important; }
+.error { background: #fde7e7; color: #9f2828 !important; }
+
+.text-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.comparison { margin-top: 44px; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+.comparison h2 { margin: 8px 0 22px; }
+
+@media (max-width: 760px) {
+  .nav { align-items: flex-start; flex-direction: column; padding-block: 16px; }
+  .nav-links { width: 100%; gap: 12px; overflow-x: auto; white-space: nowrap; }
+  .page { padding: 60px 0; }
+  .lesson-grid, .two-columns { grid-template-columns: 1fr; }
+  .lesson-card { min-height: 220px; }
+}
+
+@media (min-width: 761px) and (max-width: 1000px) {
+  .lesson-grid { grid-template-columns: repeat(2, 1fr); }
+}
