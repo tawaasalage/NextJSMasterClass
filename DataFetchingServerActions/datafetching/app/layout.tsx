@@ -9,8 +9,10 @@ export const metadata: Metadata = {
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/abc", label: "ABC" },
-  { href: "/cde", label: "CDE" },
+  { href: "/data-fetching", label: "Data-Fetching" },
+  { href: "/api-routes", label: "API Routes" },
+  { href: "/caching", label: "Caching" },
+  { href: "/server-actions", label: "Server Actions" },
 ];
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
