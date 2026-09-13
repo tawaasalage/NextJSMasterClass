@@ -20,6 +20,7 @@ export default function SEOPage() {
   return (
     <article>
       <h1>SEO Page</h1>
+
       <p>This is the SEO page content.</p>
     </article>
   );
