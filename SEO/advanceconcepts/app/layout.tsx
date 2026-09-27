@@ -19,9 +19,11 @@ export const metadata: Metadata = {
 };
 
 const topics = [
-  { id: 1, title: "ENV Variables", href: "/environment" },
-  { id: 2, title: "SEO", href: "/seo" },
-  { id: 3, title: "performance", href: "/performance" },
+  { id: 1, title: "HOME", href: "/" },
+  { id: 2, title: "ENV Variables", href: "/environment" },
+  { id: 3, title: "SEO", href: "/seo" },
+  { id: 4, title: "Images", href: "/performance" },
+  { id: 5, title: "Dashboard", href: "/dashboard" },
 ];
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

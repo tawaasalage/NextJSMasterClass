@@ -6,6 +6,7 @@ const topics = [
   { id: 1, title: "Environment Variables", href: "/environment" },
   { id: 2, title: "SEO", href: "/seo" },
   { id: 3, title: "performance", href: "/performance" },
+  { id: 4, title: "Dashboard", href: "/dashboard" },
 ];
 
 export default function Home() {
