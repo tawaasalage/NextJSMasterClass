@@ -1,7 +1,6 @@
 import { cookies } from "next/headers";
-import { getSessionUser } from "./session";
-
+import { getTokenUser } from "./jwt";
 export async function getUser() {
-  const sessionId = (await cookies()).get("user_session")?.value;
-  return getSessionUser(sessionId || "");
+  const value = (await cookies()).get("jwt_token")?.value as string;
+  return getTokenUser(value);
 }

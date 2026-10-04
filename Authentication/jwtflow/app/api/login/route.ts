@@ -1,37 +1,22 @@
 import { demoPassword, demoUsers } from "@/lib/demo-users";
 import { NextRequest, NextResponse } from "next/server";
 import { deleteSession, createSession } from "@/lib/session";
+import { createToken } from "@/lib/jwt";
 
 export async function POST(request: NextRequest) {
-  const body = await request.json();
-  const { email, password } = body;
+  const { email, password } = await request.json();
+  const user = demoUsers.find((user) => user.email === email);
 
-  const user = demoUsers.find(
-    (user) => user.email === email && password === demoPassword,
-  );
-
-  if (!user) {
-    return new Response(JSON.stringify({ error: "Invalid credentials" }), {
-      status: 401,
-      headers: { "Content-Type": "application/json" },
-    });
+  if (!user || password !== demoPassword) {
+    return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
-  console.log(
-    "Deleting session for user:",
-    request.cookies.get("user_session")?.value,
-  );
-  const existingSession = request.cookies.get("user_session")?.value;
-  if (existingSession) {
-    await deleteSession(existingSession);
-  }
-  const response = NextResponse.json({ ok: true });
-
-  response.cookies.set("user_session", await createSession(user.id), {
+  const respose = NextResponse.json({ ok: true });
+  respose.cookies.set("jwt_token", await createToken(user), {
     httpOnly: true,
-    maxAge: 60 * 60,
     sameSite: "lax",
+    maxAge: 60 * 60, // 1 hour
   });
 
-  return response;
+  return respose;
 }
