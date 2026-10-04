@@ -1,6 +1,5 @@
-import { cookies } from "next/headers";
-import { getTokenUser } from "./jwt";
+import { auth } from "@/auth";
+
 export async function getUser() {
-  const value = (await cookies()).get("jwt_token")?.value as string;
-  return getTokenUser(value);
+  return (await auth())?.user ?? null;
 }
